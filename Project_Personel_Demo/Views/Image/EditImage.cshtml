@@ -1,0 +1,29 @@
+﻿@model Project_Personel_Demo.Models.TblImage
+@{
+    ViewBag.Title = "EditImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Resim Düzenleme</h2>
+
+@using (Html.BeginForm("UpdateImage", "Image", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Resim ID</label>
+        @Html.TextBoxFor(x => x.ImageID, new { @class = "form-control" })
+        <br />
+        <label>Resim</label>
+        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+        <br />
+        <label>Açıklama</label>
+        @Html.TextBoxFor(x => x.ImageDescription, new { @class = "form-control" })
+        
+        <br />
+        @Html.HiddenFor(x => x.ImageID)
+        <button class="btn btn-info">Resim Güncelle</button>
+
+
+
+    </div>
+
+}

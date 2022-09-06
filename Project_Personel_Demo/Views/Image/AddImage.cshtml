@@ -1,0 +1,18 @@
+﻿@model Project_Personel_Demo.Models.TblImage
+@{
+    ViewBag.Title = "AddImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Resim Ekleme Sayfası</h2>
+<form method="post">
+
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.ImageDescription, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-info">Resim Ekle</button>
+</form>

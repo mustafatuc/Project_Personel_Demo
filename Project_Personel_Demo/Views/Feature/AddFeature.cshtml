@@ -1,0 +1,20 @@
+﻿@model Project_Personel_Demo.Models.TblFeature
+@{
+    ViewBag.Title = "AddFeature";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yetenek Ekleme Sayfası</h2>
+<form method="post">
+
+    <label>Yetenek Başlığı</label>
+    @Html.TextBoxFor(x => x.FeatureTitle, new { @class = "form-control" })
+    <br />
+    <label>Yetenek Logosu</label>
+    @Html.TextBoxFor(x => x.FeatureLogo, new { @class = "form-control" })
+    <br />
+    <label>Yetenek Açıklama</label>
+    @Html.TextBoxFor(x => x.FeatureDescription, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Yetenek Ekle</button>
+</form>

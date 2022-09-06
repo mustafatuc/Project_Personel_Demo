@@ -1,0 +1,32 @@
+﻿@using Project_Personel_Demo.Models
+@model List<TblEducation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>eg</th>
+        <th>eg Logosu</th>
+        <th>Acıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EducationID</td>
+            <td>@item.EducationTitle</td>
+            <td>@item.EduationDate</td>
+            <td>@item.EducationDescription</td>
+            <td><a href="/Education/DeleteEducation/@item.EducationID" class="btn btn-danger"> eg Sil</a></td>
+            <td><a href="/Education/EditEducation/@item.EducationID" class="btn btn-success"> eg Güncelle</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/Education/AddEducation/" class="btn btn-primary">Yeni eg Ekle</a>

@@ -1,0 +1,33 @@
+﻿@model Project_Personel_Demo.Models.TblTestimonial
+@{
+    ViewBag.Title = "EditTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Referans Düzenleme</h2>
+@using (Html.BeginForm("UpdateTestimonial", "Testimonial", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Referans ID</label>
+        @Html.TextBoxFor(x => x.TestimonialID, new { @class = "form-control" })
+        <br />
+        <label>Referans Adı</label>
+        @Html.TextBoxFor(x => x.TestimonialName, new { @class = "form-control" })
+        <br />
+        <label>Referans Resmi</label>
+        @Html.TextBoxFor(x => x.TestimonialImage, new { @class = "form-control" })
+        <br />
+        <label>Referans Başlığı</label>
+        @Html.TextBoxFor(x => x.TestimonialTitle, new { @class = "form-control" })
+        <br />
+        <label>Referans Açıklama</label>
+        @Html.TextBoxFor(x => x.TestimonialDescription, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(x => x.TestimonialID)
+        <button class="btn btn-info">Referans Güncelle</button>
+
+
+
+    </div>
+
+}

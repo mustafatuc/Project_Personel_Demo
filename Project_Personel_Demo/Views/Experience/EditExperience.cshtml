@@ -1,0 +1,34 @@
+﻿@model Project_Personel_Demo.Models.TblExperience
+@{
+    ViewBag.Title = "EditExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Deneyim Düzenleme Sayfası</h2>
+
+
+@using (Html.BeginForm("UpdateExperience", "Experience", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Deneyim ID</label>
+        @Html.TextBoxFor(x => x.ExperienceID, new { @class = "form-control" })
+        <br />
+        <label>Deneyim Adı</label>
+        @Html.TextBoxFor(x => x.ExperinceTitle, new { @class = "form-control" })
+        <br />
+        <label>Deneyim Yılı</label>
+        @Html.TextBoxFor(x => x.ExperienceDate, new { @class = "form-control" })
+        <br />
+        <label>Deneyim Açıklaması</label>
+        @Html.TextBoxFor(x => x.ExperienceDescription, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(x => x.ExperienceID)
+        <button class="btn btn-info">Deneyim Güncelle</button>
+
+
+    </div>
+
+}
+
+
+

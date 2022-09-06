@@ -1,0 +1,30 @@
+﻿@using Project_Personel_Demo.Models
+@model List<TblImage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Resim Sayfası</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Resim Adresi</th>
+        <th>Resim Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ImageID</td>
+            <td>@item.ImageUrl</td>
+            <td>@item.ImageDescription</td>
+            <td><a href="/Image/DeleteImage/@item.ImageID" class="btn btn-danger"> Resim Sil</a></td>
+            <td><a href="/Image/EditImage/@item.ImageID" class="btn btn-success"> Resim Güncelle</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/Image/AddImage/" class="btn btn-primary">Yeni Ekle</a>
+

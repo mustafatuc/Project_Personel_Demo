@@ -1,0 +1,24 @@
+﻿@model Project_Personel_Demo.Models.TblEducation
+
+    @{
+        ViewBag.Title = "AddEducation";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <h2>AddEducation</h2>
+
+    <form method="post">
+
+        <label>eg Başlığı</label>
+        @Html.TextBoxFor(x => x.EducationTitle, new { @class = "form-control" })
+        <br />
+        <label>eg Logosu</label>
+        @Html.TextBoxFor(x => x.EduationDate, new { @class = "form-control" })
+        <br />
+        <label>eg Açıklama</label>
+        @Html.TextBoxFor(x => x.EducationDescription, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Yetenek Ekle</button>
+    </form>
+
+

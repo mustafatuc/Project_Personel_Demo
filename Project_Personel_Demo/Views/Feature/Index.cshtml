@@ -1,0 +1,33 @@
+﻿@using Project_Personel_Demo.Models
+@model List<TblFeature>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yetenek Sayfası</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Yetenek</th>
+        <th>Yetenek Logosu</th>
+        <th>Acıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FeatureID</td>
+            <td>@item.FeatureTitle</td>
+            <td>@item.FeatureLogo</td>
+            <td>@item.FeatureDescription</td>
+            <td><a href="/Feature/DeleteFeature/@item.FeatureID" class="btn btn-danger"> Yetenek Sil</a></td>
+            <td><a href="/Feature/EditFeature/@item.FeatureID" class="btn btn-success"> Yetenek Güncelle</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/Feature/AddFeature/" class="btn btn-primary">Yeni Yetenek Ekle</a>
+

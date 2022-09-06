@@ -1,0 +1,32 @@
+﻿@model Project_Personel_Demo.Models.TblFeature
+@{
+    ViewBag.Title = "EditFeature";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yetenek Düzenleme</h2>
+
+
+@using (Html.BeginForm("Updatefeature", "Feature", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Yetenek ID</label>
+        @Html.TextBoxFor(x => x.FeatureID, new { @class = "form-control" })
+        <br />
+        <label>Yetenek Adı</label>
+        @Html.TextBoxFor(x => x.FeatureTitle, new { @class = "form-control" })
+        <br />
+        <label>Yetenek Logo</label>
+        @Html.TextBoxFor(x => x.FeatureLogo, new { @class = "form-control" })
+        <br />
+        <label>Yetenek Açıklaması</label>
+        @Html.TextBoxFor(x => x.FeatureDescription, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(x => x.FeatureID)
+        <button class="btn btn-info">Yetenek Güncelle</button>
+
+
+
+    </div>
+
+}
